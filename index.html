@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -28,7 +28,7 @@
         @font-face {
             font-family: 'Gilroy';
             src: url('./fonts/Gilroy-Regular.woff') format('woff');
-            font-weight: 400;
+            font-weight: 200;
         }
 
         @font-face {
@@ -58,47 +58,44 @@
                 <a href="./index.html" class="flex items-center">
                     <span
                         class="font-gilroy font-extrabold text-xl text-gray-900 hover:text-blue-600 transition-colors">
-                        Paris Hotels Kleber.net
+                        Paris Hotels Kleber
                     </span>
                 </a>
 
-                <!-- Language and translation controls -->
-                <div class="flex items-center gap-2">
-                    <!-- Language Dropdown -->
-                    <div class="relative group">
-                        <button
-                            class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600">
-                            <span>EN</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-
-                        <!-- Dropdown menu -->
-                        <div
-                            class="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg z-10 hidden group-hover:block">
-                            <div class="py-1">
-                                <a href="../index.html"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">
-                                    English (EN)
-                                </a>
-                                <a href="./pages/index-fr.html"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">
-                                    Français (FR)
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               <!-- Language and translation controls -->
+<div class="flex items-center gap-2">
+    <!-- Language Dropdown -->
+    <div class="relative group">
+        <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 focus:outline-none">
+            <span id="current-lang">EN</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </button>
+        
+        <!-- Dropdown menu -->
+        <div class="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-opacity duration-200">
+            <div class="py-1">
+                <a 
+                    href="../index.html" 
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+                    onclick="document.getElementById('current-lang').textContent = 'EN'"
+                >
+                    English (EN)
+                </a>
+                <a 
+                    href="./pages/index-fr.html" 
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+                    onclick="document.getElementById('current-lang').textContent = 'FR'"
+                >
+                    Français (FR)
+                </a>
             </div>
         </div>
+    </div>
+</div>
 
-        <!-- Google Translate (placeholder) -->
-        <div id="google_translate_element" class="hidden sm:block"></div>
-        </div>
-        </div>
+      
         </div>
     </header>
     <section class="w-full h-100 md:h-120 lg:h-140 relative">
@@ -149,30 +146,29 @@
                         <!-- Text content -->
                         <div class="w-full lg:w-1/2 max-w-[617px]">
                             <div class="space-y-4">
-                                <div class="text-xl md:text-2xl text-blue-600 font-medium leading-6">
-                                    We Are Here...
-                                </div>
-
-                                <h2 class="text-3xl md:text-4xl font-bold text-black md:leading-[49px]">
-                                    Where Simple Luxury &amp;<br />
-                                    Tranquility Meet
-                                </h2>
-
-                                <div class="mt-6">
-                                    <p class="text-lg text-black font-normal leading-[26px]">
-                                        Enjoy sweeping water views when you reserve a Hudson River View Suite.
-                                        Spread out in an Executive or Luxury Suite with over 700 square feet of
-                                        lavish living areas with integrated technology. Live the New York lifestyle
-                                        in the Conrad Suite, featuring an office and separate living and dining
-                                        areas. Executive or Luxury Suite with over 700 square feet of lavish living
-                                        areas with integrated technology. Live the New York lifestyle in the Conrad
-                                        Suite, featuring an office and separate living and dining areas. water views
-                                        when you reserve a Hudson River View Suite. Spread out in an Executive or
-                                        Luxury Suite with over 700 square feet of lavish living areas with integrated
-                                        technology.
-                                    </p>
-                                </div>
-
+                              <div class="text-xl md:text-2xl text-blue-600 font-medium leading-6">
+                                We Are Here...
+                              </div>
+                  
+                              <h2 class="text-3xl md:text-4xl font-bold text-black md:leading-[49px]">
+                                Where Simple Luxury &amp;<br />
+                                Tranquility Meet
+                              </h2>
+                  
+                              <div class="mt-6">
+                                <p class="text-lg text-black font-normal leading-[26px]">
+                                  Enjoy sweeping water views when you reserve a Hudson River View Suite.
+                                  Spread out in an Executive or Luxury Suite with over 700 square feet of
+                                  lavish living areas with integrated technology. Live the New York lifestyle
+                                  in the Conrad Suite, featuring an office and separate living and dining
+                                  areas. Executive or Luxury Suite with over 700 square feet of lavish living
+                                  areas with integrated technology. Live the New York lifestyle in the Conrad
+                                  Suite, featuring an office and separate living and dining areas. water views
+                                  when you reserve a Hudson River View Suite. Spread out in an Executive or
+                                  Luxury Suite with over 700 square feet of lavish living areas with integrated
+                                  technology.
+                                </p>
+                              </div>
                                 <!-- Uncomment if you want to add the link button -->
                                 <!--
                   <a href="/about" class="bg-blue-600 flex items-center gap-2 px-6 py-4 justify-self-start hover:bg-blue-700 transition-colors">
@@ -188,7 +184,7 @@
         </section>
         <div class="w-full flex flex-col items-center mt-8" id="hotel">
             <!-- Subheading -->
-            <h2 class="text-blue-400 text-xl font-medium text-center">Accommodations</h2>
+            <h2 class="text-blue-400 text-4xl font-medium text-center">Accommodations</h2>
 
             <!-- Main Heading -->
             <h1 class="text-5xl md:text-6xl font-bold mt-4 mb-8 text-center">Available Hotels</h1>
@@ -202,11 +198,11 @@
                             class="object-cover w-full h-full hotel-image">
                     </a>
                     <div class="bg-white px-6 xl:px-14 flex flex-col justify-center">
-                        <h1 class="text-4xl font-bold text-black">Monsieur Georges</h1>
+                        <h1 class="text-4xl font-bold text-black">6VH Hotel Paris                        </h1>
                         <div class="flex flex-row justify-between mt-2">
                             <div>
                                 <span class="text-lg font-bold text-black">Location:</span>
-                                <span class="text-lg text-gray-500">17 rue Washington 75008 Paris</span>
+                                <span class="text-lg text-gray-500">6 avenue Victor Hugo 75016 Paris</span>
                             </div>
                             <button
                                 class="text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
