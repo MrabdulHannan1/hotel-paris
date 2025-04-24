@@ -1,0 +1,765 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Monsieur Georges</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+    <style>
+      body {
+        font-family: "gilroy-bold", sans-serif;
+      }
+
+      html {
+  scroll-behavior: smooth;
+}
+
+      .slider {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slide {
+        min-width: 100%;
+      }
+
+      .gallery-slider {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .gallery-slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 1rem;
+      }
+
+      .gallery-slide {
+        min-width: calc(33.333% - 0.75rem);
+      }
+
+      @media (max-width: 768px) {
+        .gallery-slide {
+          min-width: calc(50% - 0.75rem);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .gallery-slide {
+          min-width: 100%;
+        }
+      }
+
+      .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2rem;
+        height: 2rem;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        cursor: pointer;
+      }
+
+      .prev {
+        left: 0.5rem;
+      }
+
+      .next {
+        right: 0.5rem;
+      }
+
+      .tab-active {
+        background-color: #f3f4f6;
+      }
+
+      /* Marquee Animation Styles */
+      .marquee-container {
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        width: 100%;
+      }
+
+      .marquee-content {
+        display: inline-block;
+        animation: marquee 20s linear infinite;
+        width: 100%;
+      }
+
+      .marquee-content:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .marquee-item {
+        display: inline-block;
+        margin-right: 1rem;
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-black">
+    <!-- Header top bar -->
+    <header class="w-full py-4 bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between">
+            <!-- Spacer for alignment (hidden on mobile) -->
+            <div class="w-32 h-8 hidden md:block"></div>
+            
+            <!-- Logo/Link to homepage -->
+            <a href="../index.html" class="flex items-center">
+                <span class="font-gilroy font-extrabold text-xl text-gray-900 hover:text-blue-600 transition-colors">
+                    Paris Hotels Kleber.com
+                </span>
+            </a>
+            
+            <!-- Language and translation controls -->
+            <div class="flex items-center gap-2">
+                <!-- Language Dropdown -->
+                <div class="relative group">
+                    <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600">
+                        <span>EN</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    
+                    <!-- Dropdown menu -->
+                    <div class="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg z-10 hidden group-hover:block">
+                        <div class="py-1">
+                            <a href="../index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">
+                                English (EN)
+                            </a>
+                            <a href="./index-fr.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">
+                                Français (FR)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+                    <!-- Google Translate (placeholder) -->
+                    <div id="google_translate_element" class="hidden sm:block"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Hero section -->
+    <section class="w-full h-100 md:h-120 lg:h-140 relative">
+      <!-- Background Image -->
+      <img
+        src="../images/Header.webp"
+        class="w-full h-full object-cover"
+        alt="Hotel Hero Image"
+      />
+
+      <!-- Overlay with Content -->
+      <div class="bg-black/40 absolute inset-0 py-8 px-8 flex flex-col">
+        <!-- MaxWidthWrapper implementation -->
+        <div
+          class="mx-auto w-full max-w-screen-2xl relative px-4 md:px-6 h-full"
+        >
+          <div class="absolute bottom-6">
+            <!-- Hotel Name -->
+            <h1
+              class="text-2xl md:text-6xl lg:text-8xl font-bold text-white text-left tracking-[0] leading-tight text-shadow-lg/50"
+            >
+              Monsieur Georges
+            </h1>
+
+            <!-- Hotel Tagline -->
+            <p
+              class="text-white text-base md:text-lg lg:text-xl text-left mt-4"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Overview Section -->
+    <section class="bg-gray-800 hidden md:block">
+      <div class="mx-auto max-w-screen-2xl px-4 md:px-6">
+        <div class="grid grid-cols-4 py-4">
+          <button
+            class="text-center font-semibold text-lg uppercase tracking-wide-5 leading-normal cursor-pointer text-blue-500"
+          >
+            Overview
+          </button>
+          <button
+            class="text-center font-semibold text-lg uppercase tracking-wide-5 leading-normal cursor-pointer text-white hover:text-blue-400"
+          >
+          <a href="#Facilities">Facilities</a>
+          </button>
+          <button
+            class="text-center font-semibold text-lg uppercase tracking-wide-5 leading-normal cursor-pointer text-white hover:text-blue-400"
+          >
+          <a href="#Room">Room</a>
+          </button>
+          <button
+            class="text-center font-semibold text-lg uppercase tracking-wide-5 leading-normal cursor-pointer text-white hover:text-blue-400"
+          >
+          <a href="#Location">Location</a>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="w-full py-16 bg-white">
+      <div class="max-w-screen-2xl mx-auto px-4 md:px-6">
+        <div class="w-full">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Laid-back places for kindred spirits
+          </h2>
+          <p class="text-base text-gray-700 leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="w-full h-100 md:h-120 lg:h-140 relative" id="Facilities">
+      <div class="relative h-[300px] md:h-[400px] w-full">
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <div class="slider h-full">
+          <div class="slides h-full">
+            <div class="slide h-full">
+              <img
+                src="../images/Overview1.webp"
+                alt="Hotel room"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="slide h-full">
+              <img
+                src="../images/Overview2.webp"
+                alt="Hotel room"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="slide h-full">
+              <img
+                src="../images/Overview3.webp"
+                alt="Hotel room"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="slide h-full">
+              <img
+                src="../images/Overview4.webp"
+                alt="Hotel room"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="nav-button prev">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
+            </svg>
+          </div>
+          <div class="nav-button next">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="w-full h-100 md:h-120  lg:h-140 relative">
+      <div
+        class="bg-[#1a1a1a] text-white text-lg md:text-2xl font-semibold tracking-widest uppercase px-3 py-1 inline-block mb-4 w-full"
+      >
+        Facilities
+      </div>
+      <h3 class="font-semibold text-lg sm:text-xl mb-2 px-4 md:px-6" >
+        Lorem Ipsum dolor sit amet...
+      </h3>
+      <p class="text-sm sm:text-base  mb-4 leading-relaxed px-4 md:px-6 ">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum
+      </p>
+      <p class="text-sm sm:text-base  mb-6 leading-relaxed px-4 md:px-6">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum
+      </p>
+    </section>
+    <!-- Facilities slider -->
+
+    <!-- Rooms Section -->
+    <section class="w-full h-100 md:h-120 lg:h-140 relative" id="Room">
+      <div class="relative h-[300px] md:h-[400px] w-full">
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <div class="slider h-full">
+          <div class="slides h-full">
+            <div class="slide h-full">
+              <img
+                src="../images/FACILITIES2.webp"
+                alt="Hotel room"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="slide h-full">
+              <img
+              src="../images/FACILITIES3.webp"
+                alt="Hotel room"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="slide h-full">
+              <img
+                src="../images/FACILITIES4.webp"
+                alt="Hotel room"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="nav-button prev">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
+            </svg>
+          </div>
+          <div class="nav-button next">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+        class="bg-[#1a1a1a] text-white text-lg md:text-2xl font-semibold tracking-widest uppercase px-3 py-1 inline-block mb-4 w-full"
+      >
+        Rooms
+      </div>
+    <section class="w-full max-w-screen-2xl px-4 md:px-6">
+      
+    
+      <h3 class="font-semibold text-lg sm:text-xl mb-2">
+        Welcome to the best five-star hotels
+      </h3>
+      <p class="text-sm sm:text-base  mb-6 leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation
+      </p>
+      <div class="w-full overflow-hidden mb-6">
+        <div class="marquee-container">
+          <div class="marquee-content">
+            <div class="marquee-item">
+              <img
+                alt="Luxury hotel chandelier with flowers and mirrors in the background"
+                class="w-full h-48 sm:h-60 object-cover rounded"
+                height="300"
+                src="../images/ROOMS1.webp"
+                width="400"
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                alt="Hotel bedroom with white bedsheets, black headboard, and modern lamps on bedside tables"
+                class="w-full h-48 sm:h-60 object-cover rounded"
+                height="300"
+                src="../images/ROOMS2.webp"
+                width="400"
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                alt="Hotel bedroom with white bedsheets, black headboard, and modern lamps on bedside tables"
+                class="w-full h-48 sm:h-60 object-cover rounded"
+                height="300"
+                src="../images/ROOMS3.webp"
+                width="400"
+              />
+            </div>
+            <!-- Duplicate items for seamless loop -->
+            <div class="marquee-item">
+              <img
+                alt="Luxury hotel chandelier with flowers and mirrors in the background"
+                class="w-full h-48 sm:h-60 object-cover rounded"
+                height="300"
+                src="../images/ROOMS4.webp"
+                width="400"
+              />
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-sm sm:text-base mb-4 leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum
+      </p>
+      <p class="text-sm sm:text-base mb-6 leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum
+      </p>
+    </section>
+    <!-- Rooms slider -->
+    <section class="h-100 md:h-120 lg:h-140">
+      <img
+        alt="Hotel room with window, black furniture, and curtains"
+        class="w-full h-[200px] sm:h-[300px] object-cover"
+        height="400"
+        src="../images/Location.webp"
+        width="1200"
+      />
+      <div
+        class="bg-[#1a1a1a] text-white text-lg md:text-2xl font-semibold tracking-widest uppercase px-3 py-1 inline-block mb-4 w-full"
+      >
+        Location
+      </div>
+    </section>
+    <!-- Location Section -->
+    <section class="mx-auto w-full max-w-screen-2xl relative px-4 md:px-6 flex" id="Location">
+      <div class="text-xs sm:text-sm max-w-6xl mb-4 leading-relaxed">
+        <h3 class="font-semibold text-lg sm:text-xl mb-2">
+          Laid-back places for kindred spirits
+        </h3>
+        <p class="text-xs sm:text-sm max-w-6xl mb-4 leading-relaxed">
+          The hotel sits on the fringes of Chow Kit, Kuala Lumpur's once-upon-a-
+          time red-light district, for which it was named.
+        </p>
+        <p class="font-semibold mb-1">Planes</p>
+        <p class="mb-3">
+          Kuala Lumpur International Airport is 60 kilometres from the hotel and
+          transfers can be arranged for MYR95 each way; Subang Airport is 27
+          kilometres away – transfers to and from this hub cost MYR50 each way.
+        </p>
+        <p class="font-semibold mb-1">Trains</p>
+        <p class="mb-3">
+          The Medan Tuanku stop on the city's monorail is six minutes away by
+          car, and under five minutes on foot.
+        </p>
+        <p class="font-semibold mb-1">Automobiles</p>
+        <p class="mb-3">
+          You won't need your own set of wheels if you're staying in the city,
+          but it's worth downloading the Grab app before you arrive – Malaysia's
+          answer to Uber. If you do choose to drive yourself, valet parking is
+          MYR15 an hour or MYR70 a day.
+        </p>
+        <p class="font-semibold mb-1">Worth getting out of bed for</p>
+        <p class="mb-3">
+          Salute the sunrise with yoga sessions, held Monday, Wednesday and
+          Friday on the hotel's rooftop terrace. Then, after a fortifying
+          breakfast, book onto a bespoke walking tour and learn about Chow Kit's
+          history, food and culture.
+        </p>
+        <p class="mb-3">
+          Wander through historic Lake Mansion or take a guided walking tour of
+          nearby Chow Kit Market. Kuala Lumpur's biggest, and one the inside
+          scoop on the sprawling mass of stalls that sell everything from fresh
+          produce and fish to DVDs of questionable origin.
+        </p>
+        <p class="mb-3">
+          In the mood for a little retail therapy? Make your way to Bukit
+          Bintang, also known as Starhill, and treasure hunt through the
+          district's blous boutiques and artisan workshops, vintage shops, art
+          spaces or the luxury, style emporiums and your own outlet. But one of
+          the many differences of Kuala Lumpur is its genuinely Malaysian
+          design, spruce up your own space with handcrafted furniture from
+        </p>
+        <p class="font-semibold mb-1">Local restaurants</p>
+        <p class="mb-3">
+          Wake up with a jolt of rich coffee and a fluffy baked treat at nearby
+          Common Grind before starting your day's city adventures. Stop for
+          lunch Kin Kin Chili Pan Mee Shop – made famous by Montauk's David
+          Chang – and order bowls at spicy noodles. If it's pasta and carbs kind
+          of night, look no further than Marble &amp; Steak House for the city's
+          finest cuts of Wagyu and Angus.
+        </p>
+      </div>
+      <div class="max-w-xs sm:max-w-sm border-gray-300 overflow-hidden mb-6 p-2">
+        <div class="text-xl font-semibold text-blue-600 px-3 py-1">ADDRESS</div>
+        <div class="p-3 text-xs leading-tight">
+          17 rue Washington 75008 Paris
+        </div>
+        <img
+          alt="Map showing location of 17 rue Washington 75008 Paris"
+          class="w-full object-cover"
+          height="200"
+          src="../images/map thumbnail.png"
+          width="400"
+        />
+        <button
+          class="w-full bg-blue-600 text-white text-lg py-2 mt-2 hover:bg-blue-700 transition-colors view-map-btn"
+          data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d656.0543753765472!2d2.3024321!3d48.8731301!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc1ec4e3729%3A0xe6b164a2d37bcfe3!2s17%20Rue%20Washington%2C%2075008%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745062143701!5m2!1sen!2s"
+        >
+          view map
+        </button>
+      </div>
+    </section>
+
+    <section class="mx-auto  w-full max-w-screen-2xl relative px-4 md:px-6">
+      <h2 class="text-2xl">Monsieur Georges </h2>
+      <p class="text-xs sm:text-sm max-w-4xl leading-relaxed">
+        17 rue Washington 75008 Paris
+      </p>
+      <a
+        class="text-blue-600 underline pb-2"
+        href="https://monsieurgeorge.com/"
+        target="_blank"
+      >
+        https://monsieurgeorge.com/
+      </a>
+      <br>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-[#1a1a1a] text-white text-xs sm:text-sm py-4 flex justify-center space-x-8"
+    >
+    <a class="hover:underline" href="./about-fr.html"> About us </a>
+    <a class="hover:underline" href="./index-fr.html"> Paris Hotels Kleber.com </a>
+    <a class="hover:underline" href="./contact-fr.html"> Contact us </a>
+    </footer>
+    <div id="mapModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+      <div class="bg-white p-4 rounded-lg max-w-3xl w-full relative">
+          <button id="closeModal" class="absolute top-2 right-2 text-xl font-bold">&times;</button>
+          <div class="aspect-w-16 aspect-h-9">
+              <iframe id="mapIframe" class="w-full h-[500px]" frameborder="0" allowfullscreen></iframe>
+          </div>
+      </div>
+  </div>
+    <!-- JavaScript for Sliders and Tabs -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Tab functionality
+        const tabs = document.querySelectorAll("[data-tab]");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            // Remove active class from all tabs
+            tabs.forEach((t) => t.classList.remove("tab-active"));
+
+            // Add active class to clicked tab
+            tab.classList.add("tab-active");
+
+            // Hide all tab contents
+            tabContents.forEach((content) => content.classList.add("hidden"));
+
+            // Show the corresponding tab content
+            const tabName = tab.getAttribute("data-tab");
+            document
+              .getElementById(`${tabName}-content`)
+              .classList.remove("hidden");
+          });
+        });
+
+        // Slider functionality
+        const sliders = document.querySelectorAll(".slider");
+
+        sliders.forEach((slider, index) => {
+          const slides = slider.querySelector(".slides");
+          const slideItems = slider.querySelectorAll(".slide");
+          const prevBtn = slider.querySelector(".prev");
+          const nextBtn = slider.querySelector(".next");
+
+          let currentSlide = 0;
+          const slideCount = slideItems.length;
+
+          // Set up auto slide interval
+          let slideInterval = setInterval(nextSlide, 5000);
+
+          // Function to go to a specific slide
+          function goToSlide(n) {
+            slides.style.transform = `translateX(-${n * 100}%)`;
+            currentSlide = n;
+          }
+
+          // Function to go to the next slide
+          function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideCount;
+            goToSlide(currentSlide);
+          }
+
+          // Function to go to the previous slide
+          function prevSlide() {
+            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+            goToSlide(currentSlide);
+          }
+
+          // Event listeners for buttons
+          if (prevBtn && nextBtn) {
+            prevBtn.addEventListener("click", () => {
+              clearInterval(slideInterval);
+              prevSlide();
+              slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            nextBtn.addEventListener("click", () => {
+              clearInterval(slideInterval);
+              nextSlide();
+              slideInterval = setInterval(nextSlide, 5000);
+            });
+          }
+
+          // Pause auto slide on hover
+          slider.addEventListener("mouseenter", () => {
+            clearInterval(slideInterval);
+          });
+
+          // Resume auto slide when mouse leaves
+          slider.addEventListener("mouseleave", () => {
+            slideInterval = setInterval(nextSlide, 5000);
+          });
+        });
+
+        // Gallery slider functionality
+        const gallerySliders = document.querySelectorAll(".gallery-slider");
+
+        gallerySliders.forEach((slider) => {
+          const slides = slider.querySelector(".gallery-slides");
+          const slideItems = slider.querySelectorAll(".gallery-slide");
+          const prevBtn = slider.querySelector(".prev");
+          const nextBtn = slider.querySelector(".next");
+
+          let currentSlide = 0;
+          const slideCount = slideItems.length;
+          const slidesToShow =
+            window.innerWidth < 640 ? 1 : window.innerWidth < 768 ? 2 : 3;
+          const maxSlide = Math.max(0, slideCount - slidesToShow);
+
+          // Function to go to a specific slide
+          function goToSlide(n) {
+            currentSlide = Math.min(maxSlide, Math.max(0, n));
+            const offset = currentSlide * (100 / slidesToShow);
+            slides.style.transform = `translateX(-${offset}%)`;
+          }
+
+          // Function to go to the next slide
+          function nextSlide() {
+            goToSlide(currentSlide + 1);
+          }
+
+          // Function to go to the previous slide
+          function prevSlide() {
+            goToSlide(currentSlide - 1);
+          }
+
+          // Event listeners for buttons
+          if (prevBtn && nextBtn) {
+            prevBtn.addEventListener("click", prevSlide);
+            nextBtn.addEventListener("click", nextSlide);
+          }
+
+          // Handle window resize
+          window.addEventListener("resize", () => {
+            const newSlidesToShow =
+              window.innerWidth < 640 ? 1 : window.innerWidth < 768 ? 2 : 3;
+            if (newSlidesToShow !== slidesToShow) {
+              goToSlide(0);
+            }
+          });
+        });
+      });
+    </script>
+    
+    <script>
+      document.querySelectorAll('.view-map-btn').forEach(button => {
+          button.addEventListener('click', function () {
+              const mapUrl = this.getAttribute('data-map-url');
+              const iframe = document.getElementById('mapIframe');
+              iframe.src = mapUrl;
+              document.getElementById('mapModal').classList.remove('hidden');
+          });
+      });
+  
+      document.getElementById('closeModal').addEventListener('click', () => {
+          document.getElementById('mapModal').classList.add('hidden');
+          document.getElementById('mapIframe').src = ""; // Optional: clear iframe src
+      });
+  </script>
+  </body>
+</html>

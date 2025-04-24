@@ -1,0 +1,908 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Paris Hotels Kleber
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Donegal+One&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/donegal-one" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/styles/main.css" />
+    <style>
+        * {
+            font-family: 'Gilroy-bold', 'sans-serif';
+        }
+
+        .tagline {
+            font-family: 'Donegal One', 'sans-serif';
+        }
+
+        @font-face {
+            font-family: 'Gilroy';
+            src: url('./fonts/Gilroy-Regular.woff') format('woff');
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: 'Gilroy';
+            src: url('./fonts/Gilroy-Bold.woff') format('woff');
+            font-weight: 700;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Gilroy', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+    <header class="w-full py-4 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <!-- Spacer for alignment (hidden on mobile) -->
+                <div class="w-32 h-8 hidden md:block"></div>
+
+                <!-- Logo/Link to homepage -->
+                <a href="./index.html" class="flex items-center">
+                    <span
+                        class="font-gilroy font-extrabold text-xl text-gray-900 hover:text-blue-600 transition-colors">
+                        Paris Hotels Kleber
+                    </span>
+                </a>
+
+                <!-- Language and translation controls -->
+                <div class="flex items-center gap-2">
+                    <!-- Language Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600">
+                            <span>EN</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown menu -->
+                        <div
+                            class="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg z-10 hidden group-hover:block">
+                            <div class="py-1">
+                                <a href="../index.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">
+                                    English (EN)
+                                </a>
+                                <a href="./pages/index-fr.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">
+                                    Français (FR)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Google Translate (placeholder) -->
+        <div id="google_translate_element" class="hidden sm:block"></div>
+        </div>
+        </div>
+        </div>
+    </header>
+    <section class="w-full h-100 md:h-120 lg:h-140 relative">
+        <!-- Hero Image -->
+        <img src="./src/assets/hero-image.png" class="w-full h-full object-cover" alt="Hero Image" />
+
+        <!-- Overlay and Content -->
+        <div class="absolute inset-0 bg-black/40 flex justify-center items-center">
+            <!-- MaxWidthWrapper implementation -->
+            <div class="mx-auto h-full w-full max-w-screen-2xl relative px-4 md:px-6 flex justify-center items-center">
+                <div class="flex flex-col gap-14 justify-center items-center">
+                    <!-- Heading -->
+                    <h1
+                        class="tagline font-donegal text-4xl md:text-6xl lg:text-8xl font-bold text-white text-center tracking-[0] leading-tight [text-shadow:_0_4px_8px_rgba(0,0,0,0.5)]">
+                        ENJOY A LUXURY<br />
+                        <p class="tagline pt-2">EXPERIENCE</p>
+                    </h1>
+
+                    <!-- Button -->
+                    <a href="#hotel"
+                        class="bg-blue-600 hover:bg-blue-600/80 cursor-pointer text-white px-6 md:px-10 py-3 md:py-5 rounded-none transition-colors">
+                        <span class="font-bold text-lg">
+                            Explore Hotels
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <section class="w-full py-16 md:py-20">
+            <!-- MaxWidthWrapper implementation -->
+            <div class="mx-auto w-full max-w-screen-2xl relative px-4 md:px-6">
+                <div class="container mx-auto">
+                    <div class="flex flex-col lg:flex-row gap-20 items-center">
+                        <!-- Images container -->
+                        <div class="w-full lg:w-1/2 relative">
+                            <div class="relative h-[526px]">
+                                <!-- First image -->
+                                <img class="w-[505px] h-[430px] object-cover absolute top-0 left-0"
+                                    alt="Luxury hotel room with view" src="./src/assets/image-7.png" />
+                                <!-- Second image -->
+                                <img class="w-[280px] md:w-[397px] h-[338px] object-cover absolute top-[188px] right-0 lg:left-[191px]"
+                                    alt="Elegant hotel interior" src="./src/assets/image-8.png" />
+                            </div>
+                        </div>
+
+                        <!-- Text content -->
+                        <div class="w-full lg:w-1/2 max-w-[617px]">
+                            <div class="space-y-4">
+                                <div class="text-xl md:text-2xl text-blue-600 font-medium leading-6">
+                                    We Are Here...
+                                </div>
+
+                                <h2 class="text-3xl md:text-4xl font-bold text-black md:leading-[49px]">
+                                    Where Simple Luxury &amp;<br />
+                                    Tranquility Meet
+                                </h2>
+
+                                <div class="mt-6">
+                                    <p class="text-lg text-black font-normal leading-[26px]">
+                                        Enjoy sweeping water views when you reserve a Hudson River View Suite.
+                                        Spread out in an Executive or Luxury Suite with over 700 square feet of
+                                        lavish living areas with integrated technology. Live the New York lifestyle
+                                        in the Conrad Suite, featuring an office and separate living and dining
+                                        areas. Executive or Luxury Suite with over 700 square feet of lavish living
+                                        areas with integrated technology. Live the New York lifestyle in the Conrad
+                                        Suite, featuring an office and separate living and dining areas. water views
+                                        when you reserve a Hudson River View Suite. Spread out in an Executive or
+                                        Luxury Suite with over 700 square feet of lavish living areas with integrated
+                                        technology.
+                                    </p>
+                                </div>
+
+                                <!-- Uncomment if you want to add the link button -->
+                                <!--
+                  <a href="/about" class="bg-blue-600 flex items-center gap-2 px-6 py-4 justify-self-start hover:bg-blue-700 transition-colors">
+                    <p class="text-lg font-bold text-white">More About us</p>
+                
+                  </a>
+                  -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="w-full flex flex-col items-center mt-8" id="hotel">
+            <!-- Subheading -->
+            <h2 class="text-blue-400 text-xl font-medium text-center">Accommodations</h2>
+
+            <!-- Main Heading -->
+            <h1 class="text-5xl md:text-6xl font-bold mt-4 mb-8 text-center">Available Hotels</h1>
+        </div>
+        <div class="max-w-screen-2xl mx-auto px-4 md:px-6 pb-16">
+            <!-- Monsieur Georges -->
+            <div class="drop-shadow-xl mb-12 md:mb-20 bg-white rounded-lg overflow-hidden">
+                <div class="hidden lg:grid grid-cols-2 h-[480px] overflow-hidden">
+                    <a href="./pages/hotel-monsieur-en.html">
+                        <img src="images/Monsieur Georges.webp" alt="Monsieur Georges Hotel"
+                            class="object-cover w-full h-full hotel-image">
+                    </a>
+                    <div class="bg-white px-6 xl:px-14 flex flex-col justify-center">
+                        <h1 class="text-4xl font-bold text-black">Monsieur Georges</h1>
+                        <div class="flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-lg font-bold text-black">Location:</span>
+                                <span class="text-lg text-gray-500">17 rue Washington 75008 Paris</span>
+                            </div>
+                            <button
+                                class="text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d656.0543753765472!2d2.3024321!3d48.8731301!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc1ec4e3729%3A0xe6b164a2d37bcfe3!2s17%20Rue%20Washington%2C%2075008%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745062143701!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-lg text-gray-500 mt-2 line-clamp-4">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature. We offer bigger bed and every bathroom has bathtub and shower, which brings
+                            relaxation to you after a long day.
+                        </p>
+                        <div class="grid grid-cols-3 mt-4 gap-2">
+                            <span class="text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-lg font-bold text-black">Room Service</span>
+                            <span class="text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/hotel-monsieur-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Version -->
+                <div class="lg:hidden rounded-lg overflow-hidden">
+                    <button class="cursor-pointer w-full overflow-hidden">
+                        <a href="./pages/hotel-monsieur-en.html"><img src="images/Monsieur Georges.webp"
+                                alt="Monsieur Georges Hotel" class="object-cover w-full h-60 hotel-image"></a>
+                    </button>
+                    <div class="bg-white p-4 md:p-6 flex flex-col justify-center">
+                        <h1 class="text-2xl md:text-4xl font-bold text-black">Monsieur Georges</h1>
+                        <div class="md:flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-base md:text-lg font-bold text-black">Location:</span>
+                                <span class="text-base md:text-lg text-gray-500">17 rue Washington 75008 Paris</span>
+                            </div>
+                            <button
+                                class="text-base md:text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d656.0543753765472!2d2.3024321!3d48.8731301!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc1ec4e3729%3A0xe6b164a2d37bcfe3!2s17%20Rue%20Washington%2C%2075008%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745062143701!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-base md:text-lg text-gray-500 mt-2">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature...
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 mt-4 gap-2">
+                            <span class="text-base md:text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-base md:text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-base md:text-lg font-bold text-black">Room Service</span>
+                            <span class="text-base md:text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-base md:text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-base md:text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/hotel-monsieur-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Pastel -->
+            <div class="drop-shadow-xl mb-12 md:mb-20 bg-white rounded-lg overflow-hidden">
+                <div class="hidden lg:grid grid-cols-2 h-[480px] overflow-hidden">
+                    <div class="bg-white px-6 xl:px-14 flex flex-col justify-center">
+                        <h1 class="text-4xl font-bold text-black">Hotel Pastel</h1>
+                        <div class="flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-lg font-bold text-black">Location:</span>
+                                <span class="text-lg text-gray-500">79 rue Lauriston 75116 Paris</span>
+                            </div>
+                            <button
+                                class="text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d656.116507958991!2d2.2891492!3d48.8683918!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66ff01dd67683%3A0x2ca49de2437f6d0a!2s79%20Rue%20Lauriston%2C%2075116%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745062239626!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-lg text-gray-500 mt-2 line-clamp-4">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature. We offer bigger bed and every bathroom has bathtub and shower.
+                        </p>
+                        <div class="grid grid-cols-3 mt-4 gap-2">
+                            <span class="text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-lg font-bold text-black">Room Service</span>
+                            <span class="text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/hotel-pastel-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="cursor-pointer w-full h-full overflow-hidden">
+                        <a href="./pages/hotel-pastel-en.html"><img src="images/Hotel Pastel.webp" alt="Hotel Pastel"
+                                class="object-cover w-full h-full hotel-image"></a>
+                    </button>
+                </div>
+
+                <!-- Mobile Version -->
+                <div class="lg:hidden rounded-lg overflow-hidden">
+                    <button class="cursor-pointer w-full overflow-hidden">
+                        <a href="./pages/hotel-pastel-en.html"></a><img src="images/Hotel Pastel.webp"
+                            alt="Hotel Pastel" class="object-cover w-full h-60 hotel-image">
+                    </button>
+                    <div class="bg-white p-4 md:p-6 flex flex-col justify-center">
+                        <h1 class="text-2xl md:text-4xl font-bold text-black">Hotel Pastel</h1>
+                        <div class="md:flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-base md:text-lg font-bold text-black">Location:</span>
+                                <span class="text-base md:text-lg text-gray-500">79 rue Lauriston 75116 Paris</span>
+                            </div>
+                            <button
+                                class="text-base md:text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d656.116507958991!2d2.2891492!3d48.8683918!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66ff01dd67683%3A0x2ca49de2437f6d0a!2s79%20Rue%20Lauriston%2C%2075116%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745062239626!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-base md:text-lg text-gray-500 mt-2">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature...
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 mt-4 gap-2">
+                            <span class="text-base md:text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-base md:text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-base md:text-lg font-bold text-black">Room Service</span>
+                            <span class="text-base md:text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-base md:text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-base md:text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/hotel-pastel-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- La Demeure Montaigne -->
+            <div class="drop-shadow-xl mb-12 md:mb-20 bg-white rounded-lg overflow-hidden">
+                <div class="hidden lg:grid grid-cols-2 h-[480px] overflow-hidden">
+                    <button class="cursor-pointer w-full h-full overflow-hidden">
+                        <a href="./pages/la-demeure-montaigne-en.html"><img src="images/La Demeure Montaigne.webp"
+                                alt="La Demeure Montaigne" class="object-cover w-full h-full hotel-image"></a>
+                    </button>
+                    <div class="bg-white px-6 xl:px-14 flex flex-col justify-center">
+                        <h1 class="text-4xl font-bold text-black">La Demeure Montaigne</h1>
+                        <div class="flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-lg font-bold text-black">Location:</span>
+                                <span class="text-lg text-gray-500">18, rue Clément Marot 75008 Paris</span>
+                            </div>
+                            <button
+                                class="text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d656.1219941567618!2d2.303199!3d48.8679734!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc327c53bdd%3A0x8716c83a89f0908a!2s18%20Rue%20Cl%C3%A9ment%20Marot%2C%2075008%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745062423823!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-lg text-gray-500 mt-2 line-clamp-4">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature. We offer bigger bed and every bathroom has bathtub and shower.
+                        </p>
+                        <div class="grid grid-cols-3 mt-4 gap-2">
+                            <span class="text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-lg font-bold text-black">Room Service</span>
+                            <span class="text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/la-demeure-montaigne-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Version -->
+                <div class="lg:hidden rounded-lg overflow-hidden">
+                    <button class="cursor-pointer w-full overflow-hidden">
+                        <a href="./pages/hotel-demeure-montaigne-en.html"><img src="images/La Demeure Montaigne.webp"
+                                alt="La Demeure Montaigne" class="object-cover w-full h-60 hotel-image"></a>
+                    </button>
+                    <div class="bg-white p-4 md:p-6 flex flex-col justify-center">
+                        <h1 class="text-2xl md:text-4xl font-bold text-black">La Demeure Montaigne</h1>
+                        <div class="md:flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-base md:text-lg font-bold text-black">Location:</span>
+                                <span class="text-base md:text-lg text-gray-500">18, rue Clément Marot 75008
+                                    Paris</span>
+                            </div>
+                            <button
+                                class="text-base md:text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d656.1219941567618!2d2.303199!3d48.8679734!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc327c53bdd%3A0x8716c83a89f0908a!2s18%20Rue%20Cl%C3%A9ment%20Marot%2C%2075008%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745062423823!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-base md:text-lg text-gray-500 mt-2">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature...
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 mt-4 gap-2">
+                            <span class="text-base md:text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-base md:text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-base md:text-lg font-bold text-black">Room Service</span>
+                            <span class="text-base md:text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-base md:text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-base md:text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/la-demeure-montaigne-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Padam -->
+            <div class="drop-shadow-xl mb-12 md:mb-20 bg-white rounded-lg overflow-hidden">
+                <div class="hidden lg:grid grid-cols-2 h-[480px] overflow-hidden">
+                    <div class="bg-white px-6 xl:px-14 flex flex-col justify-center">
+                        <h1 class="text-4xl font-bold text-black">Hotel Padam</h1>
+                        <div class="flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-lg font-bold text-black">Location:</span>
+                                <span class="text-lg text-gray-500">9 rue Jean-Giraudoux 75016 Paris</span>
+                            </div>
+                            <button
+                                class="text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d164.0282668166093!2d2.2979819!3d48.8686542!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fe85f01688d%3A0xdca6da21d8d476bc!2s9%20Rue%20Jean%20Giraudoux%2C%2075116%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745057880490!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-lg text-gray-500 mt-2 line-clamp-4">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature. We offer bigger bed and every bathroom has bathtub and shower.
+                        </p>
+                        <div class="grid grid-cols-3 mt-4 gap-2">
+                            <span class="text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-lg font-bold text-black">Room Service</span>
+                            <span class="text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/hotel-padam-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <a href="./pages/hotel-padam-en.html">
+                        <img src="images/Hotel Padam.webp" alt="Hotel Padam"
+                            class="object-cover w-full h-full hotel-image">
+                    </a>
+                </div>
+
+                <!-- Mobile Version -->
+                <div class="lg:hidden rounded-lg overflow-hidden">
+                    <button class="cursor-pointer w-full overflow-hidden">
+                        <a href="./pages/hotel-padam-en.html"><img src="images/Hotel Padam.webp" alt="Hotel Padam"
+                                class="object-cover w-full h-60 hotel-image"></a>
+                    </button>
+                    <div class="bg-white p-4 md:p-6 flex flex-col justify-center">
+                        <h1 class="text-2xl md:text-4xl font-bold text-black">Hotel Padam</h1>
+                        <div class="md:flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-base md:text-lg font-bold text-black">Location:</span>
+                                <span class="text-base md:text-lg text-gray-500">9 rue Jean-Giraudoux 75016 Paris</span>
+                            </div>
+                            <button
+                                class="text-base md:text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d164.0282668166093!2d2.2979819!3d48.8686542!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fe85f01688d%3A0xdca6da21d8d476bc!2s9%20Rue%20Jean%20Giraudoux%2C%2075116%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745057880490!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-base md:text-lg text-gray-500 mt-2">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature...
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 mt-4 gap-2">
+                            <span class="text-base md:text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-base md:text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-base md:text-lg font-bold text-black">Room Service</span>
+                            <span class="text-base md:text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-base md:text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-base md:text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/hotel-padam-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Dadou -->
+            <div class="drop-shadow-xl mb-12 md:mb-20 bg-white rounded-lg overflow-hidden">
+                <div class="hidden lg:grid grid-cols-2 h-[480px] overflow-hidden">
+                    <a href="./pages/hotel-dadou-en.html">
+                        <img src="images/Hotel Dadou.webp" alt="Hotel Dadou"
+                            class="object-cover w-full h-full hotel-image">
+                    </a>
+                    <div class="bg-white px-6 xl:px-14 flex flex-col justify-center">
+                        <h1 class="text-4xl font-bold text-black">Hotel Dadou</h1>
+                        <div class="flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-lg font-bold text-black">Location:</span>
+                                <span class="text-lg text-gray-500">10 rue Troyon - 75017 Paris</span>
+                            </div>
+                            <button
+                                class="text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d164.00474676347662!2d2.2958616!3d48.8758287!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66feb605c0ac9%3A0xeb3bbc232a500a7d!2s10%20Rue%20Troyon%2C%2075017%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745062556705!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-lg text-gray-500 mt-2 line-clamp-4">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature. We offer bigger bed and every bathroom has bathtub and shower.
+                        </p>
+                        <div class="grid grid-cols-3 mt-4 gap-2">
+                            <span class="text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-lg font-bold text-black">Room Service</span>
+                            <span class="text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/hotel-dadou-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Version -->
+                <div class="lg:hidden rounded-lg overflow-hidden">
+                    <button class="cursor-pointer w-full overflow-hidden">
+                        <a href="./pages/hotel-dadou-en.html"><img src="images/Hotel Dadou.webp" alt="Hotel Dadou"
+                                class="object-cover w-full h-60 hotel-image"></a>
+                    </button>
+                    <div class="bg-white p-4 md:p-6 flex flex-col justify-center">
+                        <h1 class="text-2xl md:text-4xl font-bold text-black">Hotel Dadou</h1>
+                        <div class="md:flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-base md:text-lg font-bold text-black">Location:</span>
+                                <span class="text-base md:text-lg text-gray-500">10 rue Troyon - 75017 Paris</span>
+                            </div>
+                            <button
+                                class="text-base md:text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d164.00474676347662!2d2.2958616!3d48.8758287!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66feb605c0ac9%3A0xeb3bbc232a500a7d!2s10%20Rue%20Troyon%2C%2075017%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745062556705!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-base md:text-lg text-gray-500 mt-2">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature...
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 mt-4 gap-2">
+                            <span class="text-base md:text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-base md:text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-base md:text-lg font-bold text-black">Room Service</span>
+                            <span class="text-base md:text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-base md:text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-base md:text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/hotel-dadou-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Keppler -->
+            <div class="drop-shadow-xl mb-12 md:mb-20 bg-white rounded-lg overflow-hidden">
+                <div class="hidden lg:grid grid-cols-2 h-[480px] overflow-hidden">
+                    <div class="bg-white px-6 xl:px-14 flex flex-col justify-center">
+                        <h1 class="text-4xl font-bold text-black">Hotel Keppler</h1>
+                        <div class="flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-lg font-bold text-black">Location:</span>
+                                <span class="text-lg text-gray-500">10 rue Keppler 75116 Paris</span>
+                            </div>
+                            <button
+                                class="text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d328.04869469258165!2d2.2972199300767704!3d48.86984984020026!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fe9024b8bc5%3A0x5ba86a3e64e3bc91!2s10%20Rue%20Kepler%2C%2075116%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745062632133!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-lg text-gray-500 mt-2 line-clamp-4">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature. We offer bigger bed and every bathroom has bathtub and shower.
+                        </p>
+                        <div class="grid grid-cols-3 mt-4 gap-2">
+                            <span class="text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-lg font-bold text-black">Room Service</span>
+                            <span class="text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/hotel-keppler-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <a href="./pages/hotel-keppler-en.html">
+                        <img src="images/Hotel Keppler.webp" alt="Hotel Keppler"
+                            class="object-cover w-full h-full hotel-image">
+                    </a>
+                </div>
+
+                <!-- Mobile Version -->
+                <div class="lg:hidden rounded-lg overflow-hidden">
+                    <a href="./pages/hotel-keppler-en.html">
+                        <img src="images/Hotel Keppler.webp" alt="Hotel Keppler"
+                            class="object-cover w-full h-60 hotel-image">
+                    </a>
+                    <div class="bg-white p-4 md:p-6 flex flex-col justify-center">
+                        <h1 class="text-2xl md:text-4xl font-bold text-black">Hotel Keppler</h1>
+                        <div class="md:flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-base md:text-lg font-bold text-black">Location:</span>
+                                <span class="text-base md:text-lg text-gray-500">10 rue Keppler 75116 Paris</span>
+                            </div>
+                            <button
+                                class="text-base md:text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d328.04869469258165!2d2.2972199300767704!3d48.86984984020026!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fe9024b8bc5%3A0x5ba86a3e64e3bc91!2s10%20Rue%20Kepler%2C%2075116%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745062632133!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-base md:text-lg text-gray-500 mt-2">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature...
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 mt-4 gap-2">
+                            <span class="text-base md:text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-base md:text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-base md:text-lg font-bold text-black">Room Service</span>
+                            <span class="text-base md:text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-base md:text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-base md:text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/hotel-keppler-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Victor Hugo Kleber -->
+            <div class="drop-shadow-xl mb-12 md:mb-20 bg-white rounded-lg overflow-hidden">
+                <div class="hidden lg:grid grid-cols-2 h-[480px] overflow-hidden">
+                    <button class="cursor-pointer w-full h-full overflow-hidden">
+                        <a href="./pages/hotel-victor-hugo-kleber-en.html"><img
+                                src="images/Hotel Victor Hugo Kleber.webp" alt="Hotel Victor Hugo Kleber"
+                                class="object-cover w-full h-full hotel-image"></a>
+                    </button>
+                    <div class="bg-white px-6 xl:px-14 flex flex-col justify-center">
+                        <h1 class="text-4xl font-bold text-black">Hotel Victor Hugo Kleber</h1>
+                        <div class="flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-lg font-bold text-black">Location:</span>
+                                <span class="text-lg text-gray-500">19, rue Copernic 75116 Paris</span>
+                            </div>
+                            <button
+                                class="text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d328.05218881036984!2d2.2885809!3d48.8693169!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66ff02718f9eb%3A0xb78188fee5c964fb!2s19%20Rue%20Copernic%2C%2075116%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745062699714!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-lg text-gray-500 mt-2 line-clamp-4">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature. We offer bigger bed and every bathroom has bathtub and shower.
+                        </p>
+                        <div class="grid grid-cols-3 mt-4 gap-2">
+                            <span class="text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-lg font-bold text-black">Room Service</span>
+                            <span class="text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/hotel-victor-hugo-kleber-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Version -->
+                <div class="lg:hidden rounded-lg overflow-hidden">
+                    <a href="./pages/hotel-victor-hugo-kleber-en.html">
+                        <img src="images/Hotel Victor Hugo Kleber.webp" alt="Hotel Victor Hugo Kleber"
+                            class="object-cover w-full h-60 hotel-image">
+                    </a>
+                    <div class="bg-white p-4 md:p-6 flex flex-col justify-center">
+                        <h1 class="text-2xl md:text-4xl font-bold text-black">Hotel Victor Hugo Kleber</h1>
+                        <div class="md:flex flex-row justify-between mt-2">
+                            <div>
+                                <span class="text-base md:text-lg font-bold text-black">Location:</span>
+                                <span class="text-base md:text-lg text-gray-500">19, rue Copernic 75116 Paris</span>
+                            </div>
+                            <button
+                                class="text-base md:text-lg text-blue-600 font-semibold underline underline-offset-2 view-map-btn"
+                                data-map-url="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d328.05218881036984!2d2.2885809!3d48.8693169!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66ff02718f9eb%3A0xb78188fee5c964fb!2s19%20Rue%20Copernic%2C%2075116%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1745062699714!5m2!1sen!2s">
+                                View Map
+                            </button>
+                        </div>
+                        <p class="text-base md:text-lg text-gray-500 mt-2">
+                            All our Deluxe rooms have big windows to help you take a broad view of the cityscape and
+                            nature...
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 mt-4 gap-2">
+                            <span class="text-base md:text-lg font-bold text-black">Pick Up & Drop</span>
+                            <span class="text-base md:text-lg font-bold text-black">Parking Space</span>
+                            <span class="text-base md:text-lg font-bold text-black">Room Service</span>
+                            <span class="text-base md:text-lg font-bold text-black">Swimming Pool</span>
+                            <span class="text-base md:text-lg font-bold text-black">Fibre Internet</span>
+                            <span class="text-base md:text-lg font-bold text-black">Breakfast</span>
+                        </div>
+                        <hr class="my-4 border-gray-200">
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 py-3 px-6 mt-4 transition-colors">
+                                <a href="./pages/hotel-victor-hugo-kleber-en.html">
+                                    <p class="text-lg font-bold text-white">SEE DETAILS</p>
+                                </a>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="mapModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+            <div class="bg-white p-4 rounded-lg max-w-3xl w-full relative">
+                <button id="closeModal" class="absolute top-2 right-2 text-xl font-bold">&times;</button>
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe id="mapIframe" class="w-full h-[500px]" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer class="w-full  py-4  bg-gray-800" style="position: relative;top: 24px;">
+        <!-- Replace bg-gray-800 with your actual myFooterBg color -->
+        <div class="mx-auto  w-full max-w-screen-2xl relative px-4 md:px-6">
+            <div class="flex items-center justify-center gap-6 md:gap-22">
+                <!-- About Us Link -->
+                <a href="./pages/about.html"
+                    class="text-base md:text-lg font-bold text-white hover:text-gray-300 transition-colors">
+                    About us
+                </a>
+
+                <!-- Logo/Link to Homepage -->
+                <a href="../index.html"
+                    class="font-gilroy text-white font-extrabold text-xl hover:text-gray-300 transition-colors">
+                    Paris Hotels Kleber.com
+                </a>
+
+                <!-- Contact Us Link -->
+                <a href="./pages/contact.html"
+                    class="text-base md:text-lg font-bold text-white hover:text-gray-300 transition-colors">
+                    Contact us
+                </a>
+            </div>
+        </div>
+    </footer>
+     <div id="mapModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white p-4 rounded-lg max-w-3xl w-full relative">
+            <button id="closeModal" class="absolute top-2 right-2 text-xl font-bold">&times;</button>
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe id="mapIframe" class="w-full h-[500px]" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.querySelectorAll('.view-map-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const mapUrl = this.getAttribute('data-map-url');
+            const iframe = document.getElementById('mapIframe');
+            iframe.src = mapUrl;
+            document.getElementById('mapModal').classList.remove('hidden');
+        });
+    });
+
+    document.getElementById('closeModal').addEventListener('click', () => {
+        document.getElementById('mapModal').classList.add('hidden');
+        document.getElementById('mapIframe').src = ""; // Optional: clear iframe src
+    });
+</script>
+
+<script>
+    document.querySelectorAll('.view-map-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const mapUrl = this.getAttribute('data-map-url');
+            const iframe = document.getElementById('mapIframe');
+            iframe.src = mapUrl;
+            document.getElementById('mapModal').classList.remove('hidden');
+        });
+    });
+
+    document.getElementById('closeModal').addEventListener('click', () => {
+        document.getElementById('mapModal').classList.add('hidden');
+        document.getElementById('mapIframe').src = ""; // Optional: clear iframe src
+    });
+</script>
+
+
+</html>
