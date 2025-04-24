@@ -273,12 +273,12 @@
     <!-- Slides container -->
     <div id="carouselSlides" class="h-full flex transition-transform duration-300">
       <img
-        src="../images/Overview1.webp"
+        src="./images/Monsieur Georges/cros/fac1.webp"
         alt="Hotel room"
         class="w-full object-cover"
       />
       <img
-        src="../images/Overview2.webp"
+        src="./images/Monsieur Georges/cros/fac2.webp"
         alt="Hotel room"
         class="w-full object-cover"
       />
@@ -340,68 +340,71 @@
     <!-- Facilities slider -->
 
     <!-- Rooms Section -->
-    <section class="w-full h-100 md:h-120 lg:h-140 relative" id="Room">
-      <div class="relative h-[300px] md:h-[400px] w-full">
-        <div class="absolute inset-0 bg-black/30 z-10"></div>
-        <div class="slider h-full">
-          <div class="slides h-full">
-            <div class="slide h-full">
-              <img
-                src="../images/FACILITIES2.webp"
-                alt="Hotel room"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div class="slide h-full">
-              <img
-              src="../images/FACILITIES3.webp"
-                alt="Hotel room"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div class="slide h-full">
-              <img
-                src="../images/FACILITIES4.webp"
-                alt="Hotel room"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div class="nav-button prev">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-5 h-5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15.75 19.5L8.25 12l7.5-7.5"
-              />
-            </svg>
-          </div>
-          <div class="nav-button next">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-5 h-5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M8.25 4.5l7.5 7.5-7.5 7.5"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Section showing the first image -->
+<section class="w-full relative cursor-pointer" id="Gallery">
+  <div class="relative h-[300px] md:h-[400px] w-full" id="mainImageTrigger">
+    <div class="absolute inset-0 bg-black/30 z-10"></div>
+    <img
+      src="./images/Monsieur Georges/Facilities.webp"
+      alt="Hotel room"
+      class="w-full h-full object-cover"
+    />
+  </div>
+</section>
+
+<!-- Modal Carousel -->
+<div
+  id="galleryModal"
+  class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center hidden"
+>
+  <div class="relative w-[90%] max-w-4xl h-[90%] bg-black rounded-lg overflow-hidden">
+    <!-- Close button -->
+    <button
+      id="closeGallery"
+      class="absolute top-3 right-3 text-white hover:text-gray-400 z-50"
+    >
+      ✕
+    </button>
+
+    <!-- Slides container -->
+    <div id="carouselSlides" class="h-full flex transition-transform duration-300">
+      <img
+        src="./images/Monsieur Georges/cros/fac1.webp"
+        alt="Hotel room"
+        class="w-full object-cover"
+      />
+      <img
+        src="./images/Monsieur Georges/cros/fac2.webp"
+        alt="Hotel room"
+        class="w-full object-cover"
+      />
+      <img
+        src="../images/Overview3.webp"
+        alt="Hotel room"
+        class="w-full object-cover"
+      />
+      <img
+        src="../images/Overview4.webp"
+        alt="Hotel room"
+        class="w-full object-cover"
+      />
+    </div>
+
+    <!-- Navigation buttons -->
+    <button
+      id="prevSlide"
+      class="absolute left-2 top-1/2 transform -translate-y-1/2 text-white bg-black/30 p-2 rounded-full hover:bg-black/50"
+    >
+      ‹
+    </button>
+    <button
+      id="nextSlide"
+      class="absolute right-2 top-1/2 transform -translate-y-1/2 text-white bg-black/30 p-2 rounded-full hover:bg-black/50"
+    >
+      ›
+    </button>
+  </div>
+</div>
     <div
         class="bg-[#1a1a1a] text-white text-lg md:text-2xl font-semibold tracking-widest uppercase px-3 py-1 inline-block mb-4 w-full"
       >
